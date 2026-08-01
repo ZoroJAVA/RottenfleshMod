@@ -86,4 +86,6 @@ Créé par **mural** — une question ? Ouvre une [Issue](../../issues) sur GitH
 
 ---
 
-*RottenfleshMod — Parce que la chair pourrie mérite mieux que la poubelle.*
+*RottenfleshMod — Parce que la chair pourrie mérite mieux que la piscine de lave.*
+
+N.B: This mod was created by a NOOB, be nice.
