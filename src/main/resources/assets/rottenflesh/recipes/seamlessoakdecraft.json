@@ -1,0 +1,14 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rottenflesh:seamlessoak"
+    }
+  ],
+  "result": {
+    "item": "minecraft:log",
+    "data": 0,
+    "count": 2
+  }
+}

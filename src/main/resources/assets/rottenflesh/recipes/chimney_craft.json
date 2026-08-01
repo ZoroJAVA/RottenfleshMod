@@ -1,0 +1,25 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:coal",
+      "data": 0
+    },
+    "1": {
+      "item": "minecraft:furnace"
+    },
+    "2": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:chimney",
+    "count": 1
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_fv": 18,
+  "_type": "dimension",
+  "definition": {
+    "biomesInDimension": [
+      {
+        "value": "plains"
+      },
+      {
+        "value": "mountains"
+      },
+      {
+        "value": "frozen_ocean"
+      },
+      {
+        "value": "mushroom_fields"
+      },
+      {
+        "value": "end_highlands"
+      }
+    ],
+    "worldGenType": "Normal world gen",
+    "mainFillerBlock": {
+      "value": "Blocks.AIR"
+    },
+    "fluidBlock": {
+      "value": "Blocks.AIR"
+    },
+    "canRespawnHere": true,
+    "hasFog": false,
+    "isDark": false,
+    "doesWaterVaporize": false,
+    "sleepResult": "ALLOW",
+    "hasSkyLight": true,
+    "imitateOverworldBehaviour": false,
+    "portalFrame": {
+      "value": "Blocks.IRON_BLOCK"
+    },
+    "portalParticles": {
+      "value": "FIREWORKS_SPARK"
+    },
+    "portalLuminance": 10,
+    "portalSound": {
+      "value": ""
+    },
+    "igniterName": "Mine Portal Igniter",
+    "igniterTab": {
+      "value": "TOOLS"
+    },
+    "texture": "spacenav",
+    "portalTexture": "portal2",
+    "enablePortal": true
+  }
+}

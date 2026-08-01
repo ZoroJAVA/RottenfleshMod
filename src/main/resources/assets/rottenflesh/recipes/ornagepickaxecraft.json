@@ -1,0 +1,30 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "rottenflesh:orangeore"
+    },
+    "1": {
+      "item": "rottenflesh:orangeore"
+    },
+    "2": {
+      "item": "rottenflesh:orangeore"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:orangepickaxe",
+    "count": 1
+  }
+}

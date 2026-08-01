@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "rottenflesh",
+    "name": "rottenflesh",
+    "description": "little add-on",
+    "version": "${version}",
+    "credits": "Mura",
+    "logoFile": "assets/rottenflesh/textures/rotten_flesh.png",
+    "mcversion": "1.12.2",
+    "url": "https://google.fr",
+    "updateUrl": "",
+    "authorList": [
+      "mura"
+    ],
+    "dependencies": [],
+    "dependants": [],
+    "requiredMods": [],
+    "useDependencyInformation": "true"
+  }
+]

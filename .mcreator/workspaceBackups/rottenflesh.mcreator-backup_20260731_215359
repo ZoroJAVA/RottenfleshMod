@@ -1,0 +1,815 @@
+{
+  "id_map": {
+    "ENTITY": 7,
+    "DIMENSION": 1,
+    "GUI": 6
+  },
+  "mod_elements": [
+    {
+      "name": "Rottenfleshh",
+      "type": "recipe",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenfleshh"
+    },
+    {
+      "name": "ExplobowBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explobow_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Explobow",
+      "type": "gun",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 2
+      },
+      "registry_name": "explobow"
+    },
+    {
+      "name": "ExplosiveArrow",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explosive_arrow"
+    },
+    {
+      "name": "ExplobowRangedItemUsed",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explobow_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Explobowrecip",
+      "type": "recipe",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explobowrecip"
+    },
+    {
+      "name": "ExplosiveArrowrecip",
+      "type": "recipe",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explosive_arrowrecip"
+    },
+    {
+      "name": "Explobowsoft",
+      "type": "gun",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 3
+      },
+      "registry_name": "explobowsoft"
+    },
+    {
+      "name": "ExplobowBulletHitBlockSoft",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explobow_bullet_hit_block_soft",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Explobowrecipsoft",
+      "type": "recipe",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "explobowrecipsoft"
+    },
+    {
+      "name": "Rottenflesh",
+      "type": "tab",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenflesh"
+    },
+    {
+      "name": "Cookedcarrot",
+      "type": "food",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cookedcarrot"
+    },
+    {
+      "name": "Cookedcarrotrecipi",
+      "type": "recipe",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cookedcarrotrecipi"
+    },
+    {
+      "name": "Sandwich",
+      "type": "food",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandwich"
+    },
+    {
+      "name": "Sandwichrecip",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandwichrecip"
+    },
+    {
+      "name": "Chimney",
+      "type": "block",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chimney"
+    },
+    {
+      "name": "ChimneyGUI",
+      "type": "gui",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 5
+      },
+      "registry_name": "chimney_gui"
+    },
+    {
+      "name": "Chimneyproc",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chimneyproc",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prpc1",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "prpc_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Chainmail",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chainmail"
+    },
+    {
+      "name": "Chainmailhat",
+      "type": "recipe",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chainmailhat"
+    },
+    {
+      "name": "Chainmailleg",
+      "type": "recipe",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chainmailleg"
+    },
+    {
+      "name": "Chainmailfeet",
+      "type": "recipe",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chainmailfeet"
+    },
+    {
+      "name": "Firecraft",
+      "type": "recipe",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "firecraft"
+    },
+    {
+      "name": "Fire0aEntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_0a_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fire0a",
+      "type": "block",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_0a"
+    },
+    {
+      "name": "Mine",
+      "type": "dimension",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "1": 1
+      },
+      "registry_name": "mine",
+      "metadata": {
+        "ep": true
+      }
+    },
+    {
+      "name": "Seamlessdblslab",
+      "type": "block",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "seamlessdblslab"
+    },
+    {
+      "name": "Seamlessdblslabcraft",
+      "type": "recipe",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "seamlessdblslabcraft"
+    },
+    {
+      "name": "Seamlessoak",
+      "type": "block",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "seamlessoak"
+    },
+    {
+      "name": "Seamlessoakcraft",
+      "type": "recipe",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "seamlessoakcraft"
+    },
+    {
+      "name": "Seamlessoakdecraft",
+      "type": "recipe",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "seamlessoakdecraft"
+    },
+    {
+      "name": "Seamlessslabdecraft",
+      "type": "recipe",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "seamlessslabdecraft"
+    },
+    {
+      "name": "Diamondbow",
+      "type": "gun",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {
+        "0": 4
+      },
+      "registry_name": "diamondbow"
+    },
+    {
+      "name": "Diamondbowcraft",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondbowcraft"
+    },
+    {
+      "name": "Diamondstick",
+      "type": "item",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondstick"
+    },
+    {
+      "name": "Diamondstickcraft",
+      "type": "recipe",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondstickcraft"
+    },
+    {
+      "name": "Diamondstickdecraft",
+      "type": "recipe",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondstickdecraft"
+    },
+    {
+      "name": "Diamondbowadv",
+      "type": "achievement",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondbowadv"
+    },
+    {
+      "name": "Diamondbowcraftadv",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondbowcraftadv",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Orangepickaxe",
+      "type": "tool",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "orangepickaxe"
+    },
+    {
+      "name": "Handler",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "handler",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Ornagepickaxecraft",
+      "type": "recipe",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ornagepickaxecraft"
+    },
+    {
+      "name": "Orangeore",
+      "type": "item",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangeore"
+    },
+    {
+      "name": "Orangeoreblock",
+      "type": "block",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangeoreblock"
+    },
+    {
+      "name": "Orangeoresmelt",
+      "type": "recipe",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangeoresmelt"
+    },
+    {
+      "name": "Diamondhammer",
+      "type": "tool",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "diamondhammer"
+    },
+    {
+      "name": "DiamondhammerLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "diamondhammer_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Diamondhammercraft",
+      "type": "recipe",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "diamondhammercraft"
+    },
+    {
+      "name": "Orangeboots",
+      "type": "armor",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "orangeboots",
+      "metadata": {
+        "eh": false,
+        "el": false,
+        "eb": true,
+        "ec": false
+      }
+    },
+    {
+      "name": "Throwabletorch",
+      "type": "item",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "throwabletorch"
+    },
+    {
+      "name": "Doublebucket",
+      "type": "item",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "doublebucket"
+    },
+    {
+      "name": "Orangebootscraft",
+      "type": "recipe",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangebootscraft"
+    },
+    {
+      "name": "Throwtorchcraft",
+      "type": "recipe",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "throwtorchcraft"
+    },
+    {
+      "name": "DblBucketCraft",
+      "type": "recipe",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dbl_bucket_craft"
+    },
+    {
+      "name": "ChimneyCraft",
+      "type": "recipe",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chimney_craft"
+    },
+    {
+      "name": "Orangeshovel",
+      "type": "tool",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "orangeshovel"
+    },
+    {
+      "name": "Orangesword",
+      "type": "tool",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "orangesword"
+    },
+    {
+      "name": "EnderBow",
+      "type": "gun",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {
+        "0": 5
+      },
+      "registry_name": "ender_bow"
+    },
+    {
+      "name": "Minicreep",
+      "type": "mob",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {
+        "0": 6,
+        "1": 7
+      },
+      "registry_name": "minicreep"
+    },
+    {
+      "name": "DiamondSeeds",
+      "type": "item",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "diamond_seeds"
+    },
+    {
+      "name": "DiamondCrop",
+      "type": "block",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "diamond_crop"
+    },
+    {
+      "name": "DiamondNugget",
+      "type": "item",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_nugget"
+    },
+    {
+      "name": "DiamondNuggCraft",
+      "type": "recipe",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_nugg_craft"
+    },
+    {
+      "name": "SuperGlue",
+      "type": "item",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "super_glue"
+    },
+    {
+      "name": "LoctiteRecipe",
+      "type": "recipe",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "loctite_recipe"
+    },
+    {
+      "name": "SpawnMiniCreep",
+      "type": "item",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "spawn_mini_creep"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.diamondbow.name": "Diamond bow",
+      "item.diamond_seeds.name": "Diamond Seeds",
+      "tile.seamlessdblslab.name": "Seamless double slab",
+      "item.diamondhammer.name": "Diamond hammer",
+      "itemGroup.tabrottenflesh": "Rottenflesh",
+      "item.orangesword.name": "Orange sword",
+      "tile.diamond_crop.name": "Diamond Crop",
+      "item.cookedcarrot.name": "Cooked carrot",
+      "item.diamondstick.name": "Diamond stick",
+      "item.explobow.name": "Explosive Bow",
+      "item.orangebootshelmet.name": "Orangeboots Helmet",
+      "item.doublebucket.name": "Double bucket",
+      "entity.minicreep.name": "Mini creeper",
+      "item.throwabletorch.name": "Throwable torch",
+      "item.ender_bow.name": "Ender Bow",
+      "item.explobowsoft.name": "Soft Explosive Bow",
+      "item.sandwich.name": "Sandwich",
+      "item.mine.name": "Mine Portal Igniter",
+      "item.orangeore.name": "Orange ore",
+      "item.diamond_nugget.name": "Diamond Nugget",
+      "item.orangebootsboots.name": "Orange Boots",
+      "advancements.diamondbowadv.descr": "Craft a diamond bow and learn material resistance",
+      "tile.orangeoreblock.name": "Orange Ore",
+      "item.orangeshovel.name": "Orangeshovel",
+      "item.explosive_arrow.name": "Explosive Arrow",
+      "tile.fire_0a.name": "Little Fire",
+      "advancements.diamondbowadv.title": "Bendable diamond ?",
+      "tile.chimney.name": "Chimney",
+      "item.orangebootsbody.name": "Orangeboots Body",
+      "item.super_glue.name": "Super Glue LOCTITE 401 HENKEL",
+      "item.orangepickaxe.name": "Orange pickaxe",
+      "item.orangebootslegs.name": "Orangeboots Leggings",
+      "item.spawn_mini_creep.name": "Spawn Mini Creeper",
+      "tile.seamlessoak.name": "Seamless oak"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "rottenflesh",
+    "modName": "rottenflesh",
+    "version": "1.2.0",
+    "description": "little add-on",
+    "author": "mura",
+    "websiteURL": "https://google.fr",
+    "license": "All Rights Reserved",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "modPicture": "sandwich111",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.12.2",
+    "credits": "mumu",
+    "modElementsPackage": "net.mura.rottenflesh",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100118117
+}

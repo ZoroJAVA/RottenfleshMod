@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "rottenflesh:mine_portal_ew"
+    },
+    "axis=x": {
+      "model": "rottenflesh:mine_portal_ns"
+    },
+    "inventory": {
+      "model": "rottenflesh:mine_portal_ns"
+    }
+  }
+}

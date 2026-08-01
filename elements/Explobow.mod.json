@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 0,
+    "texture": "explo_bow",
+    "customModelName": "Normal",
+    "name": "Explosive Bow",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Rottenflesh"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:ExplosiveArrow"
+    },
+    "shootConstantly": false,
+    "usageCount": 200,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "hasGlow": false,
+    "animation": "crossbow",
+    "enableMeleeDamage": true,
+    "damageVsEntity": 3.0,
+    "onRangedItemUsed": {
+      "name": "ExplobowRangedItemUsed"
+    },
+    "bulletPower": 1.0,
+    "bulletDamage": 4.0,
+    "bulletKnockback": 2,
+    "bulletParticles": true,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "Blocks.TNT"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletHitsBlock": {
+      "name": "ExplobowBulletHitsBlock"
+    },
+    "onBulletHitsEntity": {
+      "name": "ExplobowBulletHitsBlock"
+    }
+  }
+}

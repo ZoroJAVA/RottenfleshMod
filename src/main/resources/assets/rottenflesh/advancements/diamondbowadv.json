@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "rottenflesh:diamondbow"
+    },
+    "title": {
+      "translate": "advancements.diamondbowadv.title"
+    },
+    "description": {
+      "translate": "advancements.diamondbowadv.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "diamondbowadv": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "parent": "minecraft:story/mine_diamond"
+}

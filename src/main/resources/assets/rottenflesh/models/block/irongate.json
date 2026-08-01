@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "rottenflesh:blocks/irone_gate",
+    "particle": "rottenflesh:blocks/irone_gate"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "rottenflesh:blocks/firebottom",
+    "up": "rottenflesh:blocks/firebottom",
+    "north": "rottenflesh:blocks/fire1b",
+    "east": "rottenflesh:blocks/fire1b",
+    "south": "rottenflesh:blocks/fire1b",
+    "west": "rottenflesh:blocks/fire1b",
+    "particle": "rottenflesh:blocks/firebottom"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "rottenflesh:blocks/qhdw9nhce5tdporzydyv8_-_copie",
+    "particle": "rottenflesh:blocks/qhdw9nhce5tdporzydyv8_-_copie"
+  }
+}

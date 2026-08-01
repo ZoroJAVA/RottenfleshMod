@@ -1,0 +1,11 @@
+{
+  "_fv": 18,
+  "_type": "tab",
+  "definition": {
+    "name": "Rottenflesh",
+    "icon": {
+      "value": "Items.ROTTEN_FLESH"
+    },
+    "showSearch": false
+  }
+}

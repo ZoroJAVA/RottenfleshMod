@@ -1,0 +1,29 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "1": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "2": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "3": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "5": {
+      "item": "rottenflesh:fire_0a"
+    }
+  },
+  "result": {
+    "item": "minecraft:chainmail_helmet",
+    "count": 1
+  }
+}

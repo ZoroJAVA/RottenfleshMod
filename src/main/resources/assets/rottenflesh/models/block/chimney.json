@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "rottenflesh:blocks/furnace_top",
+    "up": "rottenflesh:blocks/furnace_top",
+    "north": "rottenflesh:blocks/chimney",
+    "east": "rottenflesh:blocks/furnace_side",
+    "south": "rottenflesh:blocks/furnace_side",
+    "west": "rottenflesh:blocks/furnace_side",
+    "particle": "rottenflesh:blocks/furnace_top"
+  }
+}
