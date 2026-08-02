@@ -1,0 +1,22 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "1": {
+      "item": "minecraft:netherrack"
+    },
+    "2": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:fire_0a",
+    "count": 3
+  }
+}

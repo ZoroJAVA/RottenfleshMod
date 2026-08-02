@@ -1,0 +1,33 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 12",
+    "3 5",
+    " 78"
+  ],
+  "key": {
+    "1": {
+      "item": "rottenflesh:diamondstick"
+    },
+    "2": {
+      "item": "minecraft:string"
+    },
+    "3": {
+      "item": "rottenflesh:diamondstick"
+    },
+    "5": {
+      "item": "minecraft:string"
+    },
+    "7": {
+      "item": "rottenflesh:diamondstick"
+    },
+    "8": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:diamondbow",
+    "count": 1
+  }
+}

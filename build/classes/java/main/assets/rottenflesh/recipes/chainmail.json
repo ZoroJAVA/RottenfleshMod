@@ -1,0 +1,39 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "2": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "3": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "4": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "5": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "6": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "7": {
+      "item": "rottenflesh:fire_0a"
+    },
+    "8": {
+      "item": "rottenflesh:fire_0a"
+    }
+  },
+  "result": {
+    "item": "minecraft:chainmail_chestplate",
+    "count": 1
+  }
+}

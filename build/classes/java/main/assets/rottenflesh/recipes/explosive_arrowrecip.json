@@ -1,0 +1,20 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "2 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:gunpowder"
+    },
+    "2": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:explosive_arrow",
+    "count": 2
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:water_bucket"
+    },
+    "1": {
+      "item": "rottenflesh:orangeore"
+    },
+    "2": {
+      "item": "minecraft:lava_bucket"
+    },
+    "4": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:doublebucket",
+    "count": 1
+  }
+}

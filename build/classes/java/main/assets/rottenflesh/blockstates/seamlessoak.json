@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "rottenflesh:seamlessoak"
+    },
+    "facing=south": {
+      "model": "rottenflesh:seamlessoak"
+    },
+    "facing=north": {
+      "model": "rottenflesh:seamlessoak"
+    },
+    "facing=east": {
+      "model": "rottenflesh:seamlessoak",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "rottenflesh:seamlessoak",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "rottenflesh:seamlessoak",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "rottenflesh:seamlessoak",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

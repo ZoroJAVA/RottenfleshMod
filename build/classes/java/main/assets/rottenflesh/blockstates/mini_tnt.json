@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "explode=false": { "model": "rottenflesh:mini_tnt" },
+    "explode=true":  { "model": "rottenflesh:mini_tnt" }
+  }
+}

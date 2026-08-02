@@ -45,7 +45,7 @@ import java.util.function.Supplier;
 @Mod(modid = RottenfleshMod.MODID, version = RottenfleshMod.VERSION)
 public class RottenfleshMod {
 	public static final String MODID = "rottenflesh";
-	public static final String VERSION = "1.6.0";
+	public static final String VERSION = "1.2.0";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("rottenflesh:a");
 	@SidedProxy(clientSide = "net.mura.rottenflesh.ClientProxyRottenfleshMod", serverSide = "net.mura.rottenflesh.ServerProxyRottenfleshMod")
 	public static IProxyRottenfleshMod proxy;

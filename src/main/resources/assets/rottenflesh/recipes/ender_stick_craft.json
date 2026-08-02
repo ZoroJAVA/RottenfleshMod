@@ -1,0 +1,24 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 ",
+    "2 ",
+    " 5"
+  ],
+  "key": {
+    "0": {
+      "item": "rottenflesh:ender_powder"
+    },
+    "2": {
+      "item": "rottenflesh:ender_powder"
+    },
+    "5": {
+      "item": "rottenflesh:super_glue"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:ender_stick",
+    "count": 1
+  }
+}

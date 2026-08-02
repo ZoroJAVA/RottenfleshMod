@@ -530,7 +530,7 @@
       "type": "block",
       "sortid": 52,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "orangeoreblock"
     },
@@ -763,6 +763,69 @@
       "locked_code": true,
       "ids": {},
       "registry_name": "heart_recip"
+    },
+    {
+      "name": "EnderStick",
+      "type": "item",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ender_stick"
+    },
+    {
+      "name": "Enderbowcraft",
+      "type": "recipe",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enderbowcraft"
+    },
+    {
+      "name": "EnderPowder",
+      "type": "item",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ender_powder"
+    },
+    {
+      "name": "EnderStickCraft",
+      "type": "recipe",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ender_stick_craft"
+    },
+    {
+      "name": "EndPowderCraft",
+      "type": "recipe",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "end_powder_craft"
+    },
+    {
+      "name": "OrangeSwordCraft",
+      "type": "recipe",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orange_sword_craft"
+    },
+    {
+      "name": "OrangeShovelCraft",
+      "type": "recipe",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orange_shovel_craft"
     }
   ],
   "variable_elements": [],
@@ -800,9 +863,11 @@
       "tile.chimney.name": "Chimney",
       "item.orangebootsbody.name": "Orangeboots Body",
       "item.super_glue.name": "Super Glue LOCTITE 401 HENKEL",
+      "item.ender_powder.name": "Ender Powder",
       "item.orangepickaxe.name": "Orange pickaxe",
       "item.orangebootslegs.name": "Orangeboots Leggings",
       "item.spawn_mini_creep.name": "Spawn Mini Creeper",
+      "item.ender_stick.name": "Ender Stick",
       "tile.seamlessoak.name": "Seamless oak"
     }
   },

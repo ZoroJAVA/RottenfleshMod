@@ -1,0 +1,27 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "34 ",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "rottenflesh:creeper_heart"
+    },
+    "1": {
+      "item": "rottenflesh:creeper_heart"
+    },
+    "3": {
+      "item": "rottenflesh:creeper_heart"
+    },
+    "4": {
+      "item": "rottenflesh:creeper_heart"
+    }
+  },
+  "result": {
+    "item": "minecraft:tnt",
+    "count": 1
+  }
+}

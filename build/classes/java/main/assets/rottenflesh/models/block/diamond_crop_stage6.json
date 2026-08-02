@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "rottenflesh:blocks/diamond_crop_stage6"
+  }
+}

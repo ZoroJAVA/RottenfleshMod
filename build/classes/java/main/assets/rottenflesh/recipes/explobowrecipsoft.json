@@ -1,0 +1,30 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    " 4 ",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:diamond"
+    },
+    "2": {
+      "item": "minecraft:gunpowder"
+    },
+    "4": {
+      "item": "minecraft:bow"
+    },
+    "6": {
+      "item": "minecraft:redstone"
+    },
+    "8": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:explobowsoft",
+    "count": 1
+  }
+}

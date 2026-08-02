@@ -1,0 +1,30 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "34 ",
+    "  8"
+  ],
+  "key": {
+    "0": {
+      "item": "rottenflesh:diamond_nugget"
+    },
+    "1": {
+      "item": "rottenflesh:diamond_nugget"
+    },
+    "3": {
+      "item": "rottenflesh:diamond_nugget"
+    },
+    "4": {
+      "item": "rottenflesh:diamond_nugget"
+    },
+    "8": {
+      "item": "rottenflesh:super_glue"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 1
+  }
+}

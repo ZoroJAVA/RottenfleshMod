@@ -1,0 +1,14 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "rottenflesh:seamlessdblslab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone_slab",
+    "data": 0,
+    "count": 2
+  }
+}

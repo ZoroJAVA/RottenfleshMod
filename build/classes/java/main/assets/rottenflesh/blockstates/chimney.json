@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "rottenflesh:chimney"
+    },
+    "facing=north": {
+      "model": "rottenflesh:chimney"
+    },
+    "facing=east": {
+      "model": "rottenflesh:chimney",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "rottenflesh:chimney",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "rottenflesh:chimney",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "group": "rottenflesh",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "23"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:cooked_porkchop"
+    },
+    "2": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "3": {
+      "item": "minecraft:bread"
+    }
+  },
+  "result": {
+    "item": "rottenflesh:sandwich",
+    "count": 1
+  }
+}
