@@ -197,7 +197,7 @@
       "type": "block",
       "sortid": 24,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "chimney"
     },
@@ -206,7 +206,7 @@
       "type": "gui",
       "sortid": 25,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {
         "0": 5
       },
@@ -217,7 +217,7 @@
       "type": "procedure",
       "sortid": 26,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "chimneyproc",
       "metadata": {

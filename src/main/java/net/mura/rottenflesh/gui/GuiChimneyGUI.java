@@ -5,6 +5,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.input.Keyboard;
 
 import net.mura.rottenflesh.procedure.ProcedureChimneyproc;
+import net.mura.rottenflesh.block.BlockChimney;
 import net.mura.rottenflesh.RottenfleshMod;
 import net.mura.rottenflesh.ElementsRottenfleshMod;
 
@@ -63,6 +64,8 @@ public class GuiChimneyGUI extends ElementsRottenfleshMod.ModElement {
 			TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
 			if (ent instanceof IInventory)
 				this.internal = (IInventory) ent;
+			if (this.internal instanceof BlockChimney.TileEntityCustom)
+				((BlockChimney.TileEntityCustom) this.internal).openInventory(player);
 			this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 42, 17) {
 				@Override
 				public void onSlotChanged() {
@@ -229,6 +232,8 @@ public class GuiChimneyGUI extends ElementsRottenfleshMod.ModElement {
 			if ((internal instanceof InventoryBasic) && (playerIn instanceof EntityPlayerMP)) {
 				this.clearContainer(playerIn, playerIn.world, internal);
 			}
+			if (internal instanceof BlockChimney.TileEntityCustom)
+				((BlockChimney.TileEntityCustom) internal).closeInventory(playerIn);
 		}
 
 		private void slotChanged(int slotid, int ctype, int meta) {

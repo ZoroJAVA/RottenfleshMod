@@ -49,6 +49,8 @@ import net.minecraft.block.Block;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 
 @ElementsRottenfleshMod.ModElement.Tag
 public class BlockChimney extends ElementsRottenfleshMod.ModElement {
@@ -123,9 +125,7 @@ public class BlockChimney extends ElementsRottenfleshMod.ModElement {
 		@Override
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
 				EntityLivingBase placer) {
-			if (facing == EnumFacing.UP || facing == EnumFacing.DOWN)
-				return this.getDefaultState().withProperty(FACING, EnumFacing.NORTH);
-			return this.getDefaultState().withProperty(FACING, facing);
+			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
 		}
 
 		@Override
@@ -190,6 +190,34 @@ public class BlockChimney extends ElementsRottenfleshMod.ModElement {
 
 	public static class TileEntityCustom extends TileEntityLockableLoot {
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
+		// Nombre de minerais qu'il reste a bruler avec la charge de combustible actuellement engagee.
+		private int fuelUsesLeft = 0;
+
+		public int getFuelUsesLeft() {
+			return fuelUsesLeft;
+		}
+
+		public void setFuelUsesLeft(int fuelUsesLeft) {
+			this.fuelUsesLeft = fuelUsesLeft;
+		}
+
+		// Joueurs ayant actuellement le GUI de la cheminee ouvert.
+		private final Set<EntityPlayer> viewers = new HashSet<>();
+
+		@Override
+		public void openInventory(EntityPlayer player) {
+			viewers.add(player);
+		}
+
+		@Override
+		public void closeInventory(EntityPlayer player) {
+			viewers.remove(player);
+		}
+
+		public EntityPlayer getFirstViewer() {
+			return viewers.isEmpty() ? null : viewers.iterator().next();
+		}
+
 		@Override
 		public int getSizeInventory() {
 			return 3;
@@ -226,6 +254,7 @@ public class BlockChimney extends ElementsRottenfleshMod.ModElement {
 			this.stacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound))
 				ItemStackHelper.loadAllItems(compound, this.stacks);
+			this.fuelUsesLeft = compound.getInteger("FuelUsesLeft");
 		}
 
 		@Override
@@ -233,6 +262,7 @@ public class BlockChimney extends ElementsRottenfleshMod.ModElement {
 			super.writeToNBT(compound);
 			if (!this.checkLootAndWrite(compound))
 				ItemStackHelper.saveAllItems(compound, this.stacks);
+			compound.setInteger("FuelUsesLeft", this.fuelUsesLeft);
 			return compound;
 		}
 
