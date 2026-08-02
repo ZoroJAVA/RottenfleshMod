@@ -32,7 +32,7 @@
 ## 📦 Installation
 
 1. Télécharge et installe **[Minecraft Forge](https://files.minecraftforge.net/)**
-2. Télécharge le fichier `.jar` du mod depuis la page [Releases](../../releases)
+2. Télécharge le fichier `.jar` du mod depuis la page [Releases](../../releases) ou sur https://www.curseforge.com/minecraft/mc-mods/rottenflesh
 3. Place le fichier dans ton dossier `.minecraft/mods/`
 4. Lance Minecraft avec le profil Forge ✅
 
