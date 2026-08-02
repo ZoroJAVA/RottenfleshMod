@@ -32,7 +32,7 @@
 ## 📦 Installation
 
 1. Télécharge et installe **[Minecraft Forge](https://files.minecraftforge.net/)**
-2. Télécharge le fichier `.jar` du mod depuis la page [Releases](../../releases)
+2. Télécharge le fichier `.jar` du mod depuis la page [Releases](../../releases) ou sur https://www.curseforge.com/minecraft/mc-mods/rottenflesh
 3. Place le fichier dans ton dossier `.minecraft/mods/`
 4. Lance Minecraft avec le profil Forge ✅
 
@@ -89,3 +89,5 @@ Créé par **mural** — une question ? Ouvre une [Issue](../../issues) sur GitH
 *RottenfleshMod — Parce que la chair pourrie mérite mieux que la piscine de lave.*
 
 N.B: This mod was created by a NOOB, be nice.
+
+<img width="94" height="100" alt="unnamed" src="https://github.com/user-attachments/assets/2c7e90d2-1bdc-45d8-a5f7-d5ac70828e00" />
