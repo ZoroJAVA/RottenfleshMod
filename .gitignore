@@ -1,0 +1,9 @@
+/.gradle/
+/.claude/
+/.idea/
+/.settings/
+/build/
+/run/
+/.mcreator/workspaceBackups/
+/gradle/
+
