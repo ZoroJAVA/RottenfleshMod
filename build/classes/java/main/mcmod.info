@@ -1,16 +1,16 @@
 [
   {
     "modid": "rottenflesh",
-    "name": "rottenflesh",
-    "description": "little add-on",
-    "version": "1.2.0",
-    "credits": "mumu",
-    "logoFile": "assets/rottenflesh/textures/sandwich111.png",
+    "name": "Rottenflesh",
+    "description": "Rottenflesh — Because Rotten Flesh deserves better than the lava pit.",
+    "version": "1.6.1",
+    "credits": "Katana_zoro/ZoroJAVA",
+    "logoFile": "logo.png",
     "mcversion": "1.12.2",
-    "url": "https://google.fr",
-    "updateUrl": "",
+    "url": "https://github.com/ZoroJAVA/RottenfleshMod",
+    "updateUrl": "https://github.com/ZoroJAVA/RottenfleshMod",
     "authorList": [
-      "mura"
+      "Mura L"
     ],
     "dependencies": [],
     "dependants": [],
