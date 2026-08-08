@@ -350,7 +350,7 @@
       "type": "dimension",
       "sortid": 34,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {
         "1": 1
       },
