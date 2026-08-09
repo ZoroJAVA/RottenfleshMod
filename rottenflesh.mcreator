@@ -1,7 +1,7 @@
 {
   "id_map": {
-    "ENTITY": 7,
     "GUI": 6,
+    "ENTITY": 7,
     "DIMENSION": 1
   },
   "mod_elements": [
@@ -834,8 +834,8 @@
     "en_us": {
       "item.diamondbow.name": "Diamond bow",
       "item.diamond_seeds.name": "Diamond Seeds",
-      "tile.seamlessdblslab.name": "Seamless double slab",
       "item.diamondhammer.name": "Diamond hammer",
+      "tile.seamlessdblslab.name": "Seamless double slab",
       "itemGroup.tabrottenflesh": "Rottenflesh",
       "item.orangesword.name": "Orange sword",
       "tile.diamond_crop.name": "Diamond Crop",
