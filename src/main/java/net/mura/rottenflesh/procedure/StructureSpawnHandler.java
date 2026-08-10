@@ -4,6 +4,7 @@ import net.mura.rottenflesh.ElementsRottenfleshMod;
 import net.mura.rottenflesh.entity.Herobrine;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -145,9 +146,13 @@ public class StructureSpawnHandler extends ElementsRottenfleshMod.ModElement {
             torchBlocks.add(torchPos);
         }
 
-        // Structure complete et pas deja active : fait apparaitre le mob a 15 blocs de la
+        // Structure complete et pas deja active : la flamme s'allume, un eclair tombe sur le
+        // netherrack (effet dramatique du rituel), puis le mob apparait a 15 blocs de la
         // structure, dans une direction aleatoire, a un endroit degage (pas dans un mur/sol).
         // La structure elle-meme reste en place.
+        world.addWeatherEffect(
+                new EntityLightningBolt(world, netherrackPos.getX() + 0.5D, netherrackPos.getY(), netherrackPos.getZ() + 0.5D, false));
+
         BlockPos spawnPos = findSpawnPosition(world, netherrackPos);
 
         Herobrine.EntityCustom mob = new Herobrine.EntityCustom(world);
