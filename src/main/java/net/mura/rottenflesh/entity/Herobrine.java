@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -40,6 +41,9 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
 import net.minecraft.client.model.ModelBiped;
@@ -77,6 +81,22 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 					this.addLayer(new LayerHeldItem(this));
 				}
 
+				// Pendant l'embuscade (isHidingBody()), cache tout le corps sauf la tete, qui reste
+				// visible et flotte seule. Parametre en EntityLiving (pas EntityCustom) : avec le type
+				// brut RenderLiving, seule cette signature override reellement doRender (le T generique
+				// de RenderLiving<T extends EntityLiving> s'efface en EntityLiving), sinon ce serait
+				// juste une surcharge jamais appelee par le moteur de rendu.
+				@Override
+				public void doRender(net.minecraft.entity.EntityLiving entity, double x, double y, double z, float entityYaw, float partialTicks) {
+					boolean hidingBody = entity instanceof EntityCustom && ((EntityCustom) entity).isHidingBody();
+					model.bipedBody.showModel = !hidingBody;
+					model.bipedRightArm.showModel = !hidingBody;
+					model.bipedLeftArm.showModel = !hidingBody;
+					model.bipedRightLeg.showModel = !hidingBody;
+					model.bipedLeftLeg.showModel = !hidingBody;
+					super.doRender(entity, x, y, z, entityYaw, partialTicks);
+				}
+
 				protected ResourceLocation getEntityTexture(Entity entity) {
 					return new ResourceLocation("rottenflesh:textures/entity/herobrine.png");
 				}
@@ -107,6 +127,30 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 		// Empeche de re-invoquer des zombies a chaque tick une fois passe sous la moitie de sa vie.
 		private boolean halfHealthZombiesSummoned = false;
 
+		// Fenetre glissante : s'il ne touche personne pendant 30 secondes d'affilee (le minuteur se
+		// reinitialise a chaque coup porte), il devient invisible 4 secondes puis se teleporte a
+		// 1 bloc devant le joueur. Peut se reproduire plusieurs fois par combat.
+		private static final int NO_HIT_TIMEOUT_TICKS = 20 * 20;
+		private static final int AMBUSH_INVISIBILITY_TICKS = 4 * 20;
+		private static final double AMBUSH_TELEPORT_DISTANCE = 1.0D;
+
+		private int ticksAliveWithoutHit = 0;
+		private int ambushInvisibilityRemaining = 0;
+
+		// Synchronise au client (le rendu est calcule cote client, qui n'a pas acces aux champs
+		// serveur ci-dessus) : indique s'il faut cacher le corps en ne laissant que la tete visible.
+		private static final DataParameter<Boolean> HIDING_BODY = EntityDataManager.createKey(EntityCustom.class, DataSerializers.BOOLEAN);
+
+		@Override
+		protected void entityInit() {
+			super.entityInit();
+			this.dataManager.register(HIDING_BODY, false);
+		}
+
+		public boolean isHidingBody() {
+			return this.dataManager.get(HIDING_BODY);
+		}
+
 		// Barre de boss en haut de l'ecran (meme systeme que le Wither/l'Ender Dragon). Les joueurs
 		// y sont ajoutes/retires automatiquement via addTrackingPlayer/removeTrackingPlayer, donc
 		// elle apparait des qu'un joueur le voit (entre dans sa zone de tracking).
@@ -134,6 +178,25 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 					summonZombieReinforcements();
 				}
 				this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
+
+				if (this.ambushInvisibilityRemaining > 0) {
+					this.ambushInvisibilityRemaining--;
+					if (this.ambushInvisibilityRemaining == 0) {
+						this.dataManager.set(HIDING_BODY, false);
+						this.ticksAliveWithoutHit = 0; // nouvelle fenetre de 30s apres l'embuscade
+					}
+				} else {
+					this.ticksAliveWithoutHit++;
+					if (this.ticksAliveWithoutHit >= NO_HIT_TIMEOUT_TICKS) {
+						EntityLivingBase currentTarget = this.getAttackTarget();
+						if (currentTarget instanceof EntityPlayer) {
+							triggerAmbush((EntityPlayer) currentTarget);
+							this.ticksAliveWithoutHit = 0;
+						}
+						// Sinon (pas de cible pour l'instant) : le compteur reste au-dessus du seuil,
+						// on retentera au tick suivant, des qu'un joueur sera cible.
+					}
+				}
 				EntityLivingBase target = this.getAttackTarget();
 				double desired = NORMAL_SPEED;
 				if (target != null) {
@@ -173,6 +236,16 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 		}
 
 		@Override
+		public boolean attackEntityAsMob(Entity entityIn) {
+			boolean landed = super.attackEntityAsMob(entityIn);
+			if (landed) {
+				// Coup porte : la fenetre glissante de 30s repart de zero.
+				this.ticksAliveWithoutHit = 0;
+			}
+			return landed;
+		}
+
+		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
 			boolean hurt = super.attackEntityFrom(source, amount);
 			if (hurt && !this.world.isRemote && amount >= TELEPORT_DAMAGE_THRESHOLD && this.teleportCooldown <= 0) {
@@ -207,6 +280,46 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 		}
 
 		/**
+		 * Le corps disparait (seule la tete reste visible, cf. le renderer) et se teleporte
+		 * immediatement a 1 bloc devant le joueur (dans la direction ou il regarde) ; le corps
+		 * reapparait 4 secondes plus tard, deja en place pour une embuscade.
+		 */
+		private void triggerAmbush(EntityPlayer player) {
+			this.ambushInvisibilityRemaining = AMBUSH_INVISIBILITY_TICKS;
+			this.dataManager.set(HIDING_BODY, true);
+
+			BlockPos spot = findAmbushSpot(player);
+			this.setPositionAndUpdate(spot.getX() + 0.5D, spot.getY(), spot.getZ() + 0.5D);
+			this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.HOSTILE, 1.0F, 1.0F);
+			this.getLookHelper().setLookPositionWithEntity(player, 500.0F, 500.0F);
+		}
+
+		/**
+		 * Cherche un point degage pour l'embuscade : d'abord juste devant le joueur, puis sur ses 4
+		 * cotes s'il est colle a un mur (typiquement dans un batiment), puis en dernier recours sa
+		 * position exacte (toujours valide, il s'y tient deja) — garantit qu'il se teleporte meme
+		 * si le joueur est a l'interieur d'une structure.
+		 */
+		private BlockPos findAmbushSpot(EntityPlayer player) {
+			float yawRad = player.rotationYaw * ((float) Math.PI / 180F);
+			double forwardX = -MathHelper.sin(yawRad);
+			double forwardZ = MathHelper.cos(yawRad);
+			BlockPos spot = findTeleportSpot(player.posX + forwardX * AMBUSH_TELEPORT_DISTANCE, player.posY,
+					player.posZ + forwardZ * AMBUSH_TELEPORT_DISTANCE);
+			if (spot != null) {
+				return spot;
+			}
+			for (EnumFacing dir : EnumFacing.Plane.HORIZONTAL) {
+				spot = findTeleportSpot(player.posX + dir.getFrontOffsetX() * AMBUSH_TELEPORT_DISTANCE, player.posY,
+						player.posZ + dir.getFrontOffsetZ() * AMBUSH_TELEPORT_DISTANCE);
+				if (spot != null) {
+					return spot;
+				}
+			}
+			return new BlockPos(player);
+		}
+
+		/**
 		 * Tente de teleporter Herobrine juste derriere le joueur (a l'oppose de la direction ou il
 		 * regarde), pour attaquer de l'autre cote. Renvoie true si la teleportation a eu lieu.
 		 */
@@ -223,7 +336,7 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 			}
 
 			this.setPositionAndUpdate(spot.getX() + 0.5D, spot.getY(), spot.getZ() + 0.5D);
-			this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ENDERPEARL_THROW, SoundCategory.HOSTILE, 1.0F, 1.0F);
+			this.world.playSound(null, this.posX, this.posY, this.posZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.HOSTILE, 1.0F, 1.0F);
 			// Se remet immediatement face au joueur pour enchainer l'attaque depuis sa nouvelle position.
 			this.getLookHelper().setLookPositionWithEntity(player, 500.0F, 500.0F);
 			return true;
@@ -263,11 +376,15 @@ public class Herobrine extends ElementsRottenfleshMod.ModElement {
 		@Override
 		protected void initEntityAI() {
 			this.tasks.addTask(0, new EntityAISwimming(this));
-			this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
+			// useLongMemory = true : continue de chercher un chemin vers sa cible meme s'il la perd
+			// de vue temporairement (mur, structure) au lieu d'abandonner la poursuite.
+			this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, true));
 			this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
 			this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 150.0F));
 			this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+			// checkSight = false : le repere/verrouille meme a travers les murs/structures (il "voit"
+			// le joueur peu importe les obstacles). Le pathfinding vanilla se charge de le contourner.
+			this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, false));
 		}
 
 		@Override
